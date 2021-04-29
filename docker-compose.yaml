@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  gridworld:
+    image: grid:latest
+    volumes:
+      - ./hw_gridworld/src:/hw_gridworld/src
+    ports:
+      - "6006:6006"
+    entrypoint: /bin/bash
+    command: -c "tensorboard --logdir /hw_gridworld/src/runs --host 0.0.0.0 --port 6006"
